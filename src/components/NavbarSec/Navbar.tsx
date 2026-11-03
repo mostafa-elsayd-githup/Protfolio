@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import type { RouteProp } from "../../Types/Navbar";
 import Logo from "../Logo/Logo";
 import { Menu, X } from "lucide-react";
+import { useScrollStore } from "../../store/useScrollStore";
 
 const routes: RouteProp[] = [
   { name: "Home", path: "home" },
@@ -14,17 +15,7 @@ const routes: RouteProp[] = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [activeSection, setActiveSection] = useState("home");
-  const handleScrollToSection = (sectionId: string) => {
-    setActiveSection(sectionId);
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
-  };
+  const { activeSection, scrollToSection } = useScrollStore();    
   const toggleMenu = () => setIsOpen(!isOpen);
   return (
     <header className="fixed top-2 left-0 w-full z-50">
@@ -33,11 +24,11 @@ export default function Navbar() {
           <Logo />
           <ul className="hidden md:flex items-center gap-8 relative">
             {routes.map((item) => {
-              const isActive = activeSection === item.path;
+              const isActive = activeSection === item.path;              
               return (
                 <li key={item.name} className="relative">
                   <button
-                    onClick={() => handleScrollToSection(item.path)}
+                    onClick={() => scrollToSection(item.path)}
                     className={`text-sm font-medium transition-colors duration-200 px-2 py-1 cursor-pointer bg-transparent border-none ${
                       isActive
                         ? "text-(--color-primary) font-bold"
@@ -80,7 +71,7 @@ export default function Navbar() {
                 <li key={item.name} className="relative w-full">
                   <button
                     onClick={() => {
-                      handleScrollToSection(item.path);
+                      scrollToSection(item.path);
                       setIsOpen(!isOpen);
                     }}
                     className={`w-full text-start text-sm font-medium px-4 py-3 rounded-xl transition-all duration-300 cursor-pointer flex items-center justify-between group border ${
