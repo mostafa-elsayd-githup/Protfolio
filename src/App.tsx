@@ -7,7 +7,7 @@ import Projects from "./components/projects/Projects";
 
 function App() {
   return (
-    <div className="text-white ">
+    <div className="text-white container w-full m-auto">
       <Navbar />
       <Hero />
       <AboutSkillsSec />
