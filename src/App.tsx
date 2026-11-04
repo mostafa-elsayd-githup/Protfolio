@@ -7,13 +7,19 @@ import Projects from "./components/projects/Projects";
 
 function App() {
   return (
-    <div className="text-white container w-full m-auto">
-      <Navbar />
-      <Hero />
-      <AboutSkillsSec />
-      <Projects />
-      <Contact />
-    </div>
+    <>
+      <header>
+        <Navbar />
+      </header>
+      <main>
+        <Hero />
+        <AboutSkillsSec />
+        <Projects />
+      </main>
+      <footer>
+        <Contact />
+      </footer>
+    </>
   );
 }
 
