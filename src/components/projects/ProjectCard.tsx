@@ -1,13 +1,20 @@
 import { ArrowRight, Globe2 } from "lucide-react";
 import type { Project } from "../../Types/projectDataType";
-
+import { motion } from "framer-motion";
+import { fadeInUp } from "../../animations/Variants";
 function ProjectCard({ project }: { project: Project }) {
   return (
-    <div className="relative flex flex-col xl:flex-row gap-4 bg-(--bg-section)/60 border border-(--color-border) p-4 lg:p-5 rounded-3xl backdrop-blur-xl overflow-hidden max-w-2xl">
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      variants={fadeInUp}
+      viewport={{once:true}}
+      className="relative flex flex-col gap-4 bg-(--bg-section)/60 border border-(--color-border) p-4 lg:p-5 rounded-3xl backdrop-blur-xl overflow-hidden group"
+    >
       <div className="absolute -inset-px bg-linear-to-r from-(--color-border)/10 to-(--color-border)/10 rounded-3xl pointer-events-none" />
       <div className="relative w-full flex justify-center items-center">
         <div className="relative overflow-visible rounded-2xl">
-          <div className="relative overflow-hidden rounded-2xl border border-(--color-border) shadow-2xl transform hover:scale-[1.01] -rotate-3 hover:scale-105 transition-all duration-300 cursor-pointer">
+          <div className="relative overflow-hidden rounded-2xl border border-(--color-border) shadow-2xl transform group-hover:scale-105 -rotate-3 transition-all duration-300 cursor-pointer">
             <img
               src={project.image}
               alt={project.title}
@@ -48,11 +55,12 @@ function ProjectCard({ project }: { project: Project }) {
             href={project.githubUrl}
             className="text-sm font-semibold text-(--color-muted) hover:text-(--color-text) flex items-center gap-2 transition-colors"
           >
-            <Globe2 size={20} className="inline"/> <span className="">GitHub</span>
+            <Globe2 size={20} className="inline" />{" "}
+            <span className="">GitHub</span>
           </a>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

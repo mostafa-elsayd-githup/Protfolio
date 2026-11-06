@@ -19,7 +19,7 @@ export default function Navbar() {
   const toggleMenu = () => setIsOpen(!isOpen);
   return (
     <header className="fixed top-2 left-0 w-full z-50">
-      <section className="text-white bg-(--bg-glassy) backdrop-blur-md container mx-auto py-4 px-4 rounded-2xl">
+      <section className="text-white bg-(--bg-glassy)/30 backdrop-blur-xl container mx-auto py-4 px-4 rounded-2xl">
         <nav className="relative flex items-center justify-between md:justify-around  gap-10 ">
           <Logo />
           <ul className="hidden md:flex items-center gap-8 relative">

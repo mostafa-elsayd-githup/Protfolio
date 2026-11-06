@@ -1,19 +1,29 @@
 import About from "./About/About";
 import Skills from "./Skills/Skills";
-
+import { motion } from "framer-motion";
+import { slideInRight, slideInLeft } from "../../animations/Variants";
 function AboutSkillsSec() {
   return (
-    <section
-      id="about-skills"
-      className="py-16 px-6 lg:px-12 container mx-auto"
-    >
+    <section id="about-skills" className="my-20 mx-4">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
-        <div className="w-full flex border-b pb-8 lg:border-b-0 lg:border-r lg:pr-5 border-(--color-border) ">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          variants={slideInLeft}
+          viewport={{once:true}}
+          className="w-full flex border-b pb-8 lg:border-b-0 lg:border-r lg:pr-5 border-(--color-border) "
+        >
           <About />
-        </div>
-        <div className="w-full flex">
+        </motion.div>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          variants={slideInRight}
+          viewport={{once:true}}
+          className="w-full flex"
+        >
           <Skills />
-        </div>
+        </motion.div>
       </div>
     </section>
   );

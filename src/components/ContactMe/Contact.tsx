@@ -2,12 +2,22 @@ import { ArrowRight, GraduationCap, Mail } from "lucide-react";
 import SectionHeader from "../UI/SectionHeader";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import CopyrightNotice from "../UI/CopyrightNotice";
-
+import { motion } from "framer-motion";
+import { fadeInUp, slideInLeft, slideInRight } from "../../animations/Variants";
 function Contact() {
   return (
-    <footer className="py-16 px-6 lg:px-12 container mx-auto" id="contact">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-        <div className="flex flex-col gap-3">
+    <footer
+      className="my-20 lg:px-6 container mx-auto bg-[url('/bg-contactSection.png')] bg-cover bg-center bg-no-repeat lg:rounded-2xl"
+      id="contact"
+    >
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 p-6 items-center ">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          variants={slideInLeft}
+          viewport={{ once: true }}
+          className="flex flex-col gap-3"
+        >
           {SectionHeader("Education")}
           <div className="flex items-center justify-between bg-(--bg-section)/60 text-(--color-muted) py-4 px-4 rounded-3xl border border-(--color-border) backdrop-blur-xl shadow-xl transition-all duration-300 hover:border-(--color-primary)/50">
             <div className="flex items-center gap-4">
@@ -36,8 +46,14 @@ function Contact() {
               </span>
             </div>
           </div>
-        </div>
-        <div className="flex flex-col gap-3">
+        </motion.div>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          variants={slideInRight}
+          viewport={{ once: true }}
+          className="flex flex-col gap-3"
+        >
           {SectionHeader("Contact Me")}
           <p className="text-(--color-muted) text-xs md:text-sm">
             Let's connect! Feel free to reach out for collaborations or
@@ -81,11 +97,17 @@ function Contact() {
               </a>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
-      <div className="mt-16 pt-6 border-t border-(--color-border)/20 text-center text-xs text-(--color-muted)">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        variants={fadeInUp}
+        viewport={{ once: true }}
+        className="mt-5 py-6 border-t border-(--color-border)/20 text-center text-xs text-(--color-muted)"
+      >
         <CopyrightNotice />
-      </div>
+      </motion.div>
     </footer>
   );
 }
