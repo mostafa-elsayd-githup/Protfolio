@@ -15,16 +15,16 @@ const routes: RouteProp[] = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const { activeSection, scrollToSection } = useScrollStore();    
+  const { activeSection, scrollToSection } = useScrollStore();
   const toggleMenu = () => setIsOpen(!isOpen);
   return (
-    <header className="fixed top-2 left-0 w-full z-50">
-      <section className="text-white bg-(--bg-glassy)/30 backdrop-blur-xl container mx-auto py-4 px-4 rounded-2xl">
-        <nav className="relative flex items-center justify-between md:justify-around  gap-10 ">
+    <header className="fixed inset-x-0 top-7 md:top-2 z-50 w-full box-border">
+      <section className="mx-auto w-full max-w-6xl text-white backdrop-blur-xl rounded-4xl">
+        <nav className="relative flex w-full min-w-0 items-center justify-between px-4">
           <Logo />
           <ul className="hidden md:flex items-center gap-8 relative">
             {routes.map((item) => {
-              const isActive = activeSection === item.path;              
+              const isActive = activeSection === item.path;
               return (
                 <li key={item.name} className="relative">
                   <button
@@ -68,7 +68,7 @@ export default function Navbar() {
             {routes.map((item) => {
               const isActive = activeSection === item.path;
               return (
-                <li key={item.name} className="relative w-full">
+                <li key={item.name} className="relative">
                   <button
                     onClick={() => {
                       scrollToSection(item.path);
