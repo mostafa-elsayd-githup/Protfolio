@@ -108,7 +108,7 @@ function Hero() {
           >
             <FaLinkedinIn className="text-2xl text-(--color-muted) hover:text-(--color-accent) transition-colors" />
           </a>
-          <AvailableStauts isAvailable={true} />
+          <AvailableStauts isAvailable={false} />
         </div>
       </motion.div>
       <motion.div
