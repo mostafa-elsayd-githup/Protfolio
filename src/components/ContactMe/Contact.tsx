@@ -7,7 +7,7 @@ import { fadeInUp, slideInLeft, slideInRight } from "../../animations/Variants";
 function Contact() {
   return (
     <footer
-      className="my-20 lg:px-6 container mx-auto bg-[url('/bg-contactSection.png')] bg-cover bg-center bg-no-repeat lg:rounded-2xl"
+      className="mt-20 lg:px-6 lg:container lg:mx-auto bg-[url('/bg-contactSection.png')] bg-cover bg-center bg-no-repeat lg:rounded-2xl"
       id="contact"
     >
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 p-6 items-center ">
@@ -18,7 +18,7 @@ function Contact() {
           viewport={{ once: true }}
           className="flex flex-col gap-3"
         >
-          {SectionHeader("Education")}
+          <SectionHeader header="Education" />
           <div className="flex items-center justify-between bg-(--bg-section)/60 text-(--color-muted) py-4 px-4 rounded-3xl border border-(--color-border) backdrop-blur-xl shadow-xl transition-all duration-300 hover:border-(--color-primary)/50">
             <div className="flex items-center gap-4">
               <div className="p-3 bg-(--bg-section) border border-(--color-border) rounded-2xl">
@@ -54,7 +54,7 @@ function Contact() {
           viewport={{ once: true }}
           className="flex flex-col gap-3"
         >
-          {SectionHeader("Contact Me")}
+          <SectionHeader header="Contact Me" />
           <p className="text-(--color-muted) text-xs md:text-sm">
             Let's connect! Feel free to reach out for collaborations or
             opportunities.

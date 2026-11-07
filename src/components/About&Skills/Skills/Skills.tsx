@@ -11,8 +11,8 @@ function Skills() {
       className=" text-sm lg:text-gl lg:flex-row pt-4 w-full "
     >
       <div className="flex flex-col gap-2">
-        {SectionHeader("My Skills")}
-        {SectionTitle("Technical Skills")}
+        <SectionHeader header="My Skills" />
+        <SectionTitle title="Technical Skills " />
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 w-full">
           <TechnicalSkillsCom
             icon={<FaReact size={35} className="text-(--color-ReactIcon)" />}

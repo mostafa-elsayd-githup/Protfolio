@@ -11,11 +11,11 @@ function Projects() {
         initial="hidden"
         whileInView="visible"
         variants={slideInLeft}
-        viewport={{once:true}}
+        viewport={{ once: true }}
         className="flex flex-col gap-2 mb-5"
       >
-        {SectionHeader("My Projects")}
-        {SectionTitle("Featured Projects")}
+        <SectionHeader header="My Projects" />
+        <SectionTitle title="Featured Projects" />
         <p className="text-(--color-muted)">
           Here are my recent projects that showcase my skills and passion
         </p>
