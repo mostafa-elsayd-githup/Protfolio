@@ -12,6 +12,7 @@ export function FloatingBadge({
       initial="hidden"
       whileInView="visible"
       variants={fadeInUp}
+      viewport={{once:true}}
       className={`absolute flex items-center justify-center gap-2.5 rounded-md shadow-xl shadow-black/30  ${className}`}
     >
       <span className="text-3xl">{icon}</span>
