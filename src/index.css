@@ -1,4 +1,8 @@
 @import "tailwindcss";
+html {
+  overflow-x: clip;
+}
+
 :root {
   --bg-main: #0b1120;
   --bg-section: #111827;
@@ -14,6 +18,7 @@
   --color-muted: #94a3b8;
   --color-border: #263449;
   --bg-glassy: #0f172b;
+  --color-error:#e94242;
   letter-spacing: 0.18px;
   @media (max-width: 1024px) {
     font-size: 16px;
@@ -34,4 +39,5 @@
 body {
   font-family: "Inter", sans-serif;
   background: var(--bg-main);
+  overflow-x: clip;
 }
