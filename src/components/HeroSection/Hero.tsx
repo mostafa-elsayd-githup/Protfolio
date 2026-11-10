@@ -40,7 +40,7 @@ function Hero() {
       >
         <div className="flex flex-col gap-4">
           <span className=" py-2 px-4 text-sm w-fit bg-(--bg-section) text-(--color-text) rounded-3xl border border-transparent [background:linear-gradient(var(--bg-section),var(--bg-section))_padding-box,linear-gradient(to_right,var(--color-primary),var(--color-accent))_border-box] shadow-lg">
-            👋 Hello, I'm
+            👋 Hi, I'm
           </span>
           <div className="flex flex-col gap-1">
             <h1 className="text-4xl lg:text-7xl text-(--color-text) font-extrabold">
