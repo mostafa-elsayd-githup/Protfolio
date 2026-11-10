@@ -1,7 +1,7 @@
 function AvailableStauts({ isAvailable }: { isAvailable: boolean }) {
   return (
     <div
-      className={`inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full backdrop-blur-md shadow-sm transition-all duration-300 ${
+      className={`inline-flex items-center gap-2.5 px-1.5 md:px-3.5 py-1.5 rounded-full backdrop-blur-md shadow-sm transition-all duration-300 ${
         isAvailable ? " bg-(--color-backEndIcon)/10" : " bg-rose-500/10"
       }`}
     >
