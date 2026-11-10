@@ -1,7 +1,5 @@
 import { ArrowRight, Mail } from "lucide-react";
-import { FaCode, FaGithub } from "react-icons/fa";
-import { FaLinkedinIn } from "react-icons/fa6";
-import { FaReact } from "react-icons/fa";
+import { FaReact, FaCode } from "react-icons/fa";
 import { SiTypescript } from "react-icons/si";
 import { FloatingBadge } from "./FloatingBadge";
 import { useScrollStore } from "../../store/useScrollStore";
@@ -14,7 +12,7 @@ import {
 import { RiTailwindCssFill } from "react-icons/ri";
 import { useEffect, useState } from "react";
 import AvailableStauts from "../UI/AvailableStauts";
-
+import ContactIcons from "../UI/ContactIcon";
 function Hero() {
   const { scrollToSection } = useScrollStore();
   const ROLES = [
@@ -93,21 +91,8 @@ function Hero() {
             />
           </motion.button>
         </div>
-        <div className="flex items-center gap-5">
-          <a
-            href="https://github.com/mostafa-elsayd-githup"
-            target="_blank"
-            className="bg-(--bg-section) rounded-full p-2 md-p-3 cursor-pointer"
-          >
-            <FaGithub className="text-2xl text-(--color-muted) hover:text-(--color-accent) transition-colors" />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/mostafa-elsayd-a4b793430?utm_source=share_via&utm_content=profile&utm_medium=member_android"
-            target="_blank"
-            className="bg-(--bg-section) rounded-full p-2 md-p-3 cursor-pointer"
-          >
-            <FaLinkedinIn className="text-2xl text-(--color-muted) hover:text-(--color-accent) transition-colors" />
-          </a>
+        <div className="flex items-center gap-4">
+          <ContactIcons />
           <AvailableStauts isAvailable={false} />
         </div>
       </motion.div>

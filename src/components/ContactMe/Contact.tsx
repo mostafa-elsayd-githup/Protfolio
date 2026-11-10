@@ -1,9 +1,9 @@
-import { ArrowRight, GraduationCap, Mail } from "lucide-react";
+import { GraduationCap, Mail } from "lucide-react";
 import SectionHeader from "../UI/SectionHeader";
-import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import CopyrightNotice from "../UI/CopyrightNotice";
 import { motion } from "framer-motion";
 import { fadeInUp, slideInLeft, slideInRight } from "../../animations/Variants";
+import ContactIcons from "../UI/ContactIcon";
 function Contact() {
   return (
     <footer
@@ -66,36 +66,9 @@ function Contact() {
               target="_blank"
               className="flex items-center gap-2 bg-linear-to-r from-(--color-accent) via-(--color-primary) to-blue-600 text-white font-medium rounded-full py-3 px-6 shadow-lg shadow-blue-500/20 hover:scale-105 transition-all duration-300 text-xs"
             >
-              Send Message <ArrowRight size={16} />
+              Send Message <Mail size={16} />
             </a>
-            <div className="flex items-center gap-3">
-              <a
-                href="https://github.com/mostafa-elsayd-githup"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="GitHub Profile"
-                className="bg-(--bg-section) border border-(--color-border) rounded-full p-2 text-(--color-muted) hover:text-(--color-primary) hover:border-(--color-primary)/40 transition-all duration-300"
-              >
-                <FaGithub className="text-xl" />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/mostafa-elsayd-a4b793430"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn Profile"
-                className="bg-(--bg-section) border border-(--color-border) rounded-full p-2 text-(--color-muted) hover:text-(--color-primary) hover:border-(--color-primary)/40 transition-all duration-300"
-              >
-                <FaLinkedinIn className="text-xl" />
-              </a>
-              <a
-                href="mailto:mostafaalsyd809@gmail.com"
-                target="_blank"
-                aria-label="Email Me"
-                className="bg-(--bg-section) border border-(--color-border) rounded-full p-2 text-(--color-muted) hover:text-(--color-primary) hover:border-(--color-primary)/40 transition-all duration-300"
-              >
-                <Mail className="text-xl" />
-              </a>
-            </div>
+            <ContactIcons />
           </div>
         </motion.div>
       </div>
